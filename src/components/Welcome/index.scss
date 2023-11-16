@@ -1,0 +1,30 @@
+.welcomepage-container {
+  height: 100vh;
+  width: 100%;
+  background-color: gray;
+  display: flex;
+  flex-direction: column;
+
+  .top-spacer-wel {
+    height: 35vh;
+    width: 100%;
+    background-color: blue;
+  }
+
+  .base-container-wel {
+    height: 65vh;
+    width: 100%;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.main-container-wel {
+  height: 100%;
+  width: 50vw;
+  font-size: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
