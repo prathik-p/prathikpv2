@@ -1,30 +1,179 @@
 .welcomepage-container {
   height: 100vh;
   width: 100%;
-  background-color: gray;
+  background-color: black;
   display: flex;
   flex-direction: column;
+  overflow-y: hidden;
 
   .top-spacer-wel {
     height: 35vh;
     width: 100%;
-    background-color: blue;
   }
 
   .base-container-wel {
     height: 65vh;
-    width: 100%;
-    background-color: aqua;
+    width: 100%;  
     display: flex;
     justify-content: center;
   }
 }
 
 .main-container-wel {
-  height: 100%;
-  width: 50vw;
-  font-size: 70px;
+  height: inherit;
+  width: 70vw;
+  font-size: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: Designer;
+  position: absolute;
+  overflow-y: hidden;
+}
+
+.w-1 {
+  position: absolute;
+  color: white;
+  z-index: 20;
+  // animation: name duration timing-function delay iteration-count direction fill-mode;
+  animation :welcome-animation 0.3s 3.3s forwards;
+  opacity: 0;
+}
+
+.w-2 {
+  position: absolute;
+  top: 30px;
+  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-fill-color: black;
+  z-index: 19;
+  animation :welcome-animation 0.3s 3.0s forwards;
+  opacity: 0;
+}
+
+.w-3 {
+  position: absolute;
+  top: 60px;
+  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-fill-color: black;
+  z-index: 18;
+  animation :welcome-animation 0.3s 2.7s forwards;
+  opacity: 0;
+}
+
+.w-4 {
+  position: absolute;
+  top: 90px;
+  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-fill-color: black;
+  z-index: 17;
+  animation :welcome-animation 0.3s 2.4s forwards;
+  opacity: 0;
+}
+
+.w-5 {
+  position: absolute;
+  top: 120px;
+  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-fill-color: black;
+  z-index: 16;
+  animation :welcome-animation 0.3s 2.1s forwards;
+  opacity: 0;
+}
+
+.w-6 {
+  position: absolute;
+  top: 150px;
+  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-fill-color: black;
+  z-index: 15;
+  animation :welcome-animation 0.3s 1.8s forwards;
+  opacity: 0;
+}
+
+.w-7 {
+  position: absolute;
+  top: 180px;
+  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-fill-color: black;
+  z-index: 14;
+  animation :welcome-animation 0.3s 1.5s forwards;
+  opacity: 0;
+}
+
+.w-8 {
+  position: absolute;
+  top: 210px;
+  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-fill-color: black;
+  z-index: 13;
+  animation :welcome-animation 0.3s 1.2s forwards;
+  opacity: 0;
+}
+
+.w-9 {
+  position: absolute;
+  top: 240px;
+  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-fill-color: black;
+  z-index: 12;
+  animation :welcome-animation 0.3s 0.9s forwards;
+  opacity: 0;
+}
+
+.w-10 {
+  position: absolute;
+  top: 270px;
+  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-fill-color: black;
+  z-index: 11;
+  animation :welcome-animation 0.3s 0.6s forwards;
+  opacity: 0;
+}
+
+.w-11 {
+  position: absolute;
+  top: 300px;
+  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-fill-color: black;
+  z-index: 10;
+  animation :welcome-animation 0.3s 0.3s forwards;
+  opacity: 0;
+}
+
+.w-12 {
+  position: absolute;
+  top: 330px;
+  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-fill-color: black;
+  z-index: 9;
+  animation :welcome-animation 0.3s forwards;
+  opacity: 0;
+}
+
+
+
+@keyframes welcome-animation {
+  100%{
+    opacity: 1;
+  }
+  66%{
+    opacity: 0.4;
+  }
+  33%{
+    opacity: 1;
+  }
+  0%{
+    opacity: 0;
+  }
 }
