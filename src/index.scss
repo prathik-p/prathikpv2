@@ -9,8 +9,8 @@
 }
 
 @font-face {
-  font-family: OpenSlice;
-  src: local("OpenSlice"),url(./fonts/One-Slice.otf) format("opentype");
+  font-family: OneSlice;
+  src: local("OneSlice"),url(./fonts/One-Slice.otf) format("opentype");
 }
 
 @font-face {
@@ -31,4 +31,5 @@
 
 body {
   margin: 0;
+  overflow: hidden;
 }
