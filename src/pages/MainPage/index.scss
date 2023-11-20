@@ -1,13 +1,14 @@
 .homepage-container {
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     z-index: 0;
     background-color: black;
     position: absolute;
+    overflow: hidden;
 
     .welcome-comp {
         z-index: 100;
-        animation: welcome-comp-delay 4.5s forwards;
+        animation: welcome-comp-delay 2s forwards;
         position: absolute;
         left: 50%;
     }
@@ -30,45 +31,47 @@
 .pp-comp {
     position: absolute;
     rotate: -30deg;
-    left: -25%;
+    left: -90%;
     top:-450px;
-    z-index: 1;
+    z-index: 0;
     opacity: 0;
-    animation: pp-appear 1s forwards 4.5s;
+    animation: pp-appear 1s forwards 2s;
     display: flex;
     gap: 60px;
+    transform: translateX(40%);
 }
 
 .fullstack-comp {
     position: absolute;
     rotate: -30deg;
-    left: -25%;
+    left: -105%;
     top: -600px;
-    z-index: 1;
+    z-index: 0;
     opacity: 0;
-    animation: fullstack-appear 1s forwards 4.6s;
+    animation: fullstack-appear 1s forwards 2s;
     display: flex;
     gap: 60px;
+    transform: translateX(-85%);
 }
 
 .marquee-pp {
-    animation: ppmarquee 25s linear infinite 4.6s;
+    animation: ppmarquee 15s linear infinite;
 
 }
 
 .marquee-fullst {
-    animation: fullstackmarquee 25s linear infinite 4.6s;
+    animation: fullstackmarquee 20s linear infinite;
 
 }
 
 @keyframes pp-appear {
     0% {
         opacity: 1;
-        transform: translateX(100%);
+        -webkit-transform: translateX(40%);
     }
     100% {
         opacity: 1;
-        transform: translateX(0%);
+        -webkit-transform: translateX(-12%);
     }
 }
 
@@ -84,19 +87,30 @@
 @keyframes fullstack-appear {
     0% {
         opacity: 1;
-        transform: translateX(-100%);
+        -webkit-transform: translateX(-85%);
     }
     100% {
         opacity: 1;
-        transform: translateX(0%);
+        -webkit-transform: translateX(-15%);
     }
 }
 
 @keyframes fullstackmarquee {
     0% {
-        translate: calc(-100% - 60px) 0;
+        translate: 0 0
       }
       100% {
-        translate: 0 0;
+        translate: calc(100% + 60px) 0;
       }
+}
+
+.homepage-spacer {
+    height: 100vh;
+    width: 100%;
+    background-color: transparent;
+}
+
+.homepage-section-container {
+    height: 100vh;
+    width: 100%;
 }
