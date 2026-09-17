@@ -68,8 +68,10 @@ function HomePage() {
         <Navbar />
         <main className="section-deck" ref={deckRef} aria-label="Portfolio sections">
           <section ref={homeRef} tabIndex={-1} className="hero" id="home" aria-labelledby="hero-title">
-            <div className="hero-introduction">
-              <h1 id="hero-title">Full stack engineer building<br className="desktop-break" /> web products and voice AI.</h1>
+            <div className={`hero-introduction${paused || intro || !heroVisible ? " is-paused" : ""}`}>
+              <h1 id="hero-title">
+                Full stack engineer building<br className="desktop-break" /> web products and voice AI.
+              </h1>
             </div>
             <div className={`marquee-stage${paused || intro || !heroVisible ? " is-paused" : ""}`} aria-hidden="true">
               <div className="marquee-bands">

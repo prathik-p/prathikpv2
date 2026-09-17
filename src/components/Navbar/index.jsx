@@ -18,6 +18,17 @@ function Navbar() {
   const [active, setActive] = useState("");
   const [theme, setTheme] = useState(() => document.documentElement.dataset.theme || "dark");
   const menuRef = useRef(null);
+  const headerRef = useRef(null);
+  const currentLabel = active === "projects" ? "Selected projects" : sections.find(({ id }) => id === active)?.label || "Prathik Prejith";
+
+  useEffect(() => {
+    if (!open) return;
+    const dismiss = (event) => {
+      if (!headerRef.current?.contains(event.target)) setOpen(false);
+    };
+    document.addEventListener("pointerdown", dismiss);
+    return () => document.removeEventListener("pointerdown", dismiss);
+  }, [open]);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -51,21 +62,28 @@ function Navbar() {
   }
 
   return (
-    <header className={`navbar${active && active !== "home" ? " is-compact" : ""}`} onKeyDown={handleKeyDown}>
+    <>
+    <header ref={headerRef} className={`navbar${active && active !== "home" ? " is-compact" : ""}`} onKeyDown={handleKeyDown}>
       <a className="wordmark" href="#home" aria-label="Prathik Prejith, home" onClick={() => setOpen(false)}><span className="wordmark-full" aria-hidden="true">Prathik Prejith</span><span className="wordmark-short" aria-hidden="true">P P</span></a>
       <a className="mobile-project-link" href="#projects" onClick={() => setOpen(false)}>Projects</a>
-      <button ref={menuRef} className="menu-toggle" aria-expanded={open} aria-controls="primary-navigation" onClick={() => setOpen(!open)}>{open ? "Close" : "Menu"}</button>
+      <button ref={menuRef} className="menu-toggle" aria-expanded={open} aria-controls="primary-navigation" onClick={() => setOpen(!open)}>
+        <span className="menu-label">{open ? "Close" : "Menu"}</span>
+        <span className="mobile-section-label">{currentLabel}</span>
+        <svg className="menu-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m4 6 4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+      </button>
       <nav id="primary-navigation" aria-label="Main navigation" className={`nav-links${open ? " is-open" : ""}`}>
+        <a className="mobile-home-link" href="#home" aria-current={active === "home" ? "location" : undefined} onClick={() => setOpen(false)}>Home</a>
         {sections.map(({ id, label }) => (
           <a key={id} className={id === "contact" ? "nav-contact" : undefined} href={`#${id}`} aria-current={active === id ? "location" : undefined} onClick={() => setOpen(false)}><RollingLabel text={label} /></a>
         ))}
         <a className="github-link" href="https://github.com/prathik-p" target="_blank" rel="noreferrer"><RollingLabel text="GitHub" /><span aria-hidden="true">&#8599;</span></a>
       </nav>
+    </header>
       <button className="theme-toggle" onClick={toggleTheme} aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}>
         <span className={`theme-symbol ${theme}`} aria-hidden="true" />
         <span>{theme === "dark" ? "Light" : "Dark"}</span>
       </button>
-    </header>
+    </>
   );
 }
 

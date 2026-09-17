@@ -38,7 +38,7 @@ function Experience() {
       </fieldset>
       <div className="experience-list">
         {roles.map((job, index) => (
-          <article className="experience-entry" id={`role-${index}`} key={job.company} hidden={selected !== job.company}>
+          <article className="experience-entry" id={`role-${index}`} key={job.company} aria-hidden={selected !== job.company}>
             <div className="experience-meta"><p>{job.dates}</p><span>{job.location}</span></div>
             <div className="experience-details">
               <h3>{job.company}</h3>

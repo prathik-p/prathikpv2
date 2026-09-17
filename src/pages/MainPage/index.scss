@@ -19,6 +19,53 @@
 }
 .hero-introduction { padding: 30px var(--gutter) 0; }
 .hero-introduction h1 { margin: 0; font-size: clamp(1.3rem, 2.3vw, 2.1rem); line-height: 1.35; font-weight: 500; letter-spacing: -.045em; }
+// Aurora colors are clipped to the glyphs, leaving the surrounding area transparent.
+.hero-introduction h1 {
+  --aurora-blue: #00c2ff;
+  --aurora-green: #33ff8c;
+  --aurora-gold: #ffc640;
+  --aurora-pink: #e54cff;
+}
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+  .hero-introduction h1 {
+    background-image:
+      radial-gradient(ellipse at center, var(--aurora-blue) 0%, transparent 60%),
+      radial-gradient(ellipse at center, var(--aurora-green) 0%, transparent 60%),
+      radial-gradient(ellipse at center, var(--aurora-gold) 0%, transparent 60%),
+      radial-gradient(ellipse at center, var(--aurora-pink) 0%, transparent 60%),
+      linear-gradient(110deg, var(--aurora-blue), var(--aurora-pink));
+    background-size: 70% 220%, 80% 200%, 65% 240%, 75% 220%, 100% 100%;
+    background-position: 0% 30%, 100% 70%, 40% 0%, 80% 100%, center;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: hero-aurora-flow 14s ease-in-out infinite alternate;
+  }
+}
+.hero-introduction.is-paused h1 { animation-play-state: paused; }
+:root[data-theme="light"] .hero-introduction h1 {
+  --aurora-blue: #006a99;
+  --aurora-green: #087343;
+  --aurora-gold: #916000;
+  --aurora-pink: #9a249e;
+}
+@keyframes hero-aurora-flow {
+  50% { background-position: 100% 80%, 20% 0%, 90% 100%, 0% 30%, center; }
+  100% { background-position: 30% 0%, 80% 100%, 0% 40%, 100% 70%, center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-introduction h1 { animation: none; }
+}
+@media (forced-colors: active) {
+  .hero-introduction h1 {
+    background: none;
+    color: CanvasText;
+    -webkit-text-fill-color: CanvasText;
+    animation: none;
+  }
+}
 .hero-bottom, .site-footer {
   display: flex;
   align-items: center;

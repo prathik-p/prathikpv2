@@ -12,7 +12,7 @@ function Projects() {
         <label><input type="radio" name="project" value="flight" checked={selected === "flight"} onChange={() => setSelected("flight")} aria-controls="flight-project" /><span>Flight Trajectories</span></label>
       </fieldset>
       <div className="project-list">
-        <article className="project-entry" id="speed-project" hidden={selected !== "speed"}>
+        <article className="project-entry" id="speed-project" aria-hidden={selected !== "speed"} {...(selected !== "speed" ? { inert: "" } : {})}>
           <div className="project-heading"><p>Computer vision / Real-time systems</p><span>Mar 2024 - Oct 2024</span></div>
           <h3>Making traffic data<br />visible in real time.</h3>
           <p className="project-description">AI Speed Detection uses surveillance footage to monitor vehicle speeds and capture license plate information in a React dashboard.</p>
@@ -26,7 +26,7 @@ function Projects() {
           </details>
           <div className="project-bottom"><p>React / YOLOv8 / ByteTrack / WebSockets</p><a href="https://github.com/UnparallelStudios/ai-speed-frontend" target="_blank" rel="noreferrer" aria-label="View AI Speed Detection source on GitHub">Source code <span aria-hidden="true">&#8599;</span></a></div>
         </article>
-        <article className="project-entry" id="flight-project" hidden={selected !== "flight"}>
+        <article className="project-entry" id="flight-project" aria-hidden={selected !== "flight"} {...(selected !== "flight" ? { inert: "" } : {})}>
           <div className="project-heading"><p>Machine learning / Aviation</p><span>Dec 2024 - Apr 2025</span></div>
           <h3>Learning the path<br />from real flights.</h3>
           <p className="project-description">Ideal Path Estimation for Flight Trajectories explores how inverse reinforcement learning and deep imitation learning can replicate expert flight paths.</p>
