@@ -1,0 +1,40 @@
+.hero-bottom .hero-typewriter {
+  margin: 0;
+  font-size: clamp(1.25rem, 1.8vw, 1.65rem);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -.045em;
+}
+
+// Invisible characters reserve the final layout, so typing never shifts the CTA.
+.typewriter-line { display: block; }
+.typewriter-line + .typewriter-line { color: var(--muted); }
+.typewriter-word { display: inline-block; white-space: pre; }
+.typewriter-character {
+  display: inline-block;
+  position: relative;
+  opacity: 0;
+  &[data-visible="true"] { opacity: 1; }
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: -.09em;
+    top: .18em;
+    width: 2px;
+    height: .9em;
+    background: var(--text);
+    opacity: 0;
+  }
+  &[data-cursor="true"]::after { opacity: 1; }
+  &[data-cursor="true"][data-complete="true"]::after { animation: typewriter-cursor .9s step-end forwards; }
+}
+
+.hero-bottom.is-paused .typewriter-character::after { animation-play-state: paused; }
+
+@keyframes typewriter-cursor { from { opacity: 1; } to { opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .typewriter-character { opacity: 1; animation: none; }
+  .typewriter-character::after { display: none; animation: none; }
+}

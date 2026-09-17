@@ -1,0 +1,21 @@
+.content-section { padding: clamp(72px, 9vw, 128px) var(--gutter); border-top: 1px solid var(--line); }
+.content-section > h2 { margin: 0 0 64px; font-size: clamp(2.5rem, 5vw, 5rem); line-height: 1.1; font-weight: 500; letter-spacing: -.06em; }
+.experience-list { max-width: 1200px; margin-left: auto; }
+.experience-entry { display: grid; grid-template-columns: 1fr 3fr; gap: 40px; }
+.experience-entry + .experience-entry { margin-top: 60px; padding-top: 60px; border-top: 1px solid var(--line); }
+.experience-meta { font-size: 14px; line-height: 1.7; }
+.experience-meta p { margin: 4px 0 5px; font-weight: 500; }
+.experience-meta span { color: var(--muted); }
+.experience-details h3 { margin: 0; font-size: clamp(1.5rem, 2.5vw, 2.3rem); font-weight: 600; letter-spacing: -.04em; }
+.role-title { margin: 8px 0 24px; font-size: 16px; }
+.experience-details ul { max-width: 750px; display: grid; gap: 14px; margin: 0; padding-left: 18px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+.experience-details li { padding-left: 8px; }
+.experience-details li::marker { color: var(--muted); font-size: 10px; }
+.stack-line { margin: 28px 0 0; font-size: 13px; line-height: 1.8; color: var(--muted); }
+@media (max-width: 767px) {
+  .content-section > h2 { margin-bottom: 40px; }
+  .experience-entry { grid-template-columns: 1fr; gap: 20px; }
+  .experience-entry + .experience-entry { margin-top: 40px; padding-top: 40px; }
+  .experience-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; }
+  .experience-meta p { margin: 0; }
+}

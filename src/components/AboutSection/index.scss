@@ -1,24 +1,21 @@
-.aboutsection-container {
-    height: 100vh;
-    width: 100vw;
-    background-color: black;
-    display: grid;
-    grid-template-columns: 40vw 40vw;
-    grid-template-rows: 1fr 1fr;
-    justify-content: space-around;
+.about-section {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 40px;
+  padding: clamp(72px, 10vw, 150px) var(--gutter);
+  border-top: 1px solid var(--line);
 }
-
-.aboutsection-grid-item {
-    height: 100%;
-    width: 100%;
-    // background-color: aqua;
-    font-size: 30px;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 600;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.section-label { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
+.about-content { max-width: 1000px; }
+.about-content h2 { margin: 0; font-size: clamp(2rem, 4.5vw, 4.7rem); line-height: 1.08; font-weight: 500; letter-spacing: -.055em; }
+.about-description { max-width: 560px; margin: 32px 0 0; font-size: clamp(1rem, 1.5vw, 1.2rem); color: var(--muted); line-height: 1.7; }
+.practice-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-top: 64px; }
+.practice-grid h3 { font-size: 16px; font-weight: 500; margin: 0 0 14px; }
+.practice-grid p { max-width: 290px; color: var(--muted); font-size: 15px; line-height: 1.7; margin: 0; }
+.education-note { margin: 48px 0 0; font-size: 14px; line-height: 1.8; }
+.education-note span { color: var(--muted); }
+@media (max-width: 767px) {
+  .about-section { grid-template-columns: 1fr; gap: 28px; }
+  .practice-grid { margin-top: 40px; gap: 28px; }
 }
-
+@media (max-width: 420px) { .practice-grid { grid-template-columns: 1fr; } }

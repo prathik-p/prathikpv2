@@ -1,0 +1,30 @@
+.project-list { display: grid; gap: 64px; }
+.project-entry { padding-left: clamp(0px, 8vw, 140px); }
+.project-entry + .project-entry { border-top: 1px solid var(--line); padding-top: 64px; }
+.project-heading { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; color: var(--muted); font-size: 13px; }
+.project-heading p { margin: 0; }
+.project-entry h3 { margin: 22px 0; font-size: clamp(1.7rem, 3.5vw, 3.6rem); font-weight: 500; line-height: 1.2; letter-spacing: -.05em; }
+.project-entry h3 a { display: inline-block; }
+.project-entry h3 span { display: inline-block; margin-left: 8px; transition: transform .2s ease; }
+.project-entry h3 a:hover span { transform: translate(4px, -4px); }
+.project-description { max-width: 650px; font-size: 16px; line-height: 1.8; color: var(--muted); }
+.project-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 32px; max-width: 960px; }
+.project-summary h4 { font-size: 15px; font-weight: 600; margin: 0 0 10px; }
+.project-summary p, .project-detail p { font-size: 15px; line-height: 1.8; color: var(--muted); margin: 0; }
+.project-detail { margin-top: 28px; max-width: 780px; }
+.project-detail summary { padding: 12px 0; cursor: pointer; font-size: 14px; font-weight: 600; }
+.project-detail p { padding-top: 8px; }
+.project-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-top: 30px; font-size: 13px; }
+.project-bottom p { margin: 0; color: var(--muted); line-height: 1.8; }
+.project-bottom a { padding: 10px 0; border-bottom: 1px solid var(--text); font-weight: 600; }
+.project-bottom a span { margin-left: 18px; }
+@media (max-width: 767px) {
+  .project-summary { grid-template-columns: 1fr; gap: 24px; }
+  .project-entry { padding-left: 0; }
+  .project-list { gap: 40px; }
+  .project-entry + .project-entry { padding-top: 40px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-entry h3 span { transition: none; }
+  .project-entry h3 a:hover span { transform: none; }
+}
