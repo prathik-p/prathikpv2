@@ -155,12 +155,10 @@ html, body, #root, .portfolio { height: 100%; overflow: hidden; }
   .panel-selector span { display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 12px; font-size: 12px; }
   .project-summary { grid-template-columns: 1fr; gap: 16px; text-align: left; }
   .project-summary h4 { margin-bottom: 6px; font-size: 14px; }
-  .project-heading { flex-direction: column; gap: 5px; }
-  .project-entry h3 { font-size: 24px; line-height: 1.2; }
+  .project-heading, .project-detail { display: none; }
+  .project-entry h3 { margin-top: 0; font-size: 24px; line-height: 1.2; }
   .project-description { font-size: 14px; line-height: 1.65; text-align: left; }
   .project-summary p, .project-detail p { font-size: 14px; line-height: 1.6; }
-  .project-detail { text-align: left; }
-  .project-detail summary { min-height: 44px; font-size: 13px; }
   .project-bottom { gap: 8px 16px; font-size: 12px; }
   .project-bottom a { display: inline-flex; align-items: center; min-height: 44px; }
   .section-label { font-size: 12px; margin-bottom: 16px; }
@@ -181,17 +179,6 @@ html, body, #root, .portfolio { height: 100%; overflow: hidden; }
   .contact-section .site-footer { margin-top: 32px; padding-top: 18px; }
   .site-footer a { display: inline-flex; align-items: center; min-height: 44px; }
 
-  // Keep both collapsed project panels within a phone-sized chapter.
-  .section-deck > .projects-section {
-    --heading-gap: 12px;
-    --content-gap: 12px;
-    --subtitle-gap: 8px;
-  }
-  .projects-section .project-heading { gap: 2px; }
-  .projects-section .project-description,
-  .projects-section .project-summary p { line-height: 1.5; }
-  .projects-section .project-summary { gap: 10px; }
-  .projects-section .project-summary h4 { margin-bottom: 4px; }
 }
 @media (max-height: 740px) and (min-width: 768px) {
   .section-deck { --heading-gap: 36px; --content-gap: 28px; --subtitle-gap: 20px; }
