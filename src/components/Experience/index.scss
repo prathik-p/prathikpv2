@@ -11,8 +11,11 @@
 .experience-details ul { max-width: 750px; display: grid; gap: 14px; margin: 0; padding-left: 18px; color: var(--muted); font-size: 15px; line-height: 1.8; }
 .experience-details li { padding-left: 8px; }
 .experience-details li::marker { color: var(--muted); font-size: 10px; }
+.experience-details ul.experience-points-mobile { display: none; }
 .stack-line { margin: 28px 0 0; font-size: 13px; line-height: 1.8; color: var(--muted); }
 @media (max-width: 767px) {
+  .experience-details ul.experience-points-desktop { display: none; }
+  .experience-details ul.experience-points-mobile { display: grid; }
   .content-section > h2 { margin-bottom: 40px; }
   .experience-entry { grid-template-columns: 1fr; gap: 20px; }
   .experience-entry + .experience-entry { margin-top: 40px; padding-top: 40px; }

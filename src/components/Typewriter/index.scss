@@ -12,18 +12,19 @@
 .typewriter-word { display: inline-block; white-space: pre; }
 .typewriter-character {
   display: inline-block;
-  position: relative;
   opacity: 0;
   &[data-visible="true"] { opacity: 1; }
 
   &::after {
     content: "";
-    position: absolute;
-    right: -.09em;
-    top: .18em;
-    width: 2px;
+    // An inline caret shares the glyph baseline, independent of line-height.
+    // Cancel its border width so hidden carets don't change text spacing.
+    display: inline-block;
+    width: 0;
     height: .9em;
-    background: var(--text);
+    border-left: 2px solid var(--text);
+    margin-right: -2px;
+    vertical-align: -.1em;
     opacity: 0;
   }
   &[data-cursor="true"]::after { opacity: 1; }

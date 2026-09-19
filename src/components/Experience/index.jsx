@@ -8,9 +8,15 @@ const roles = [
     dates: "Jun 2025 - Jul 2026",
     location: "Dubai / Remote",
     points: [
-      "Built Parkabox, an e-commerce platform with checkout, subscriptions, order management, and Stripe / TotalPay payments.",
-      "Developed AI customer support and low-latency voice pipelines with Parlant, Pipecat, WebRTC, and Twilio, optimizing speech and LLM integrations.",
-      "Connected Berrydesk to WhatsApp, Discord, Slack, Google Drive, Notion, and Stripe through OAuth integrations.",
+      "Enabled purchases and recurring subscriptions for Parkabox by delivering end-to-end checkout, order, and subscription workflows.",
+      "Streamlined financial operations with secure Stripe and TotalPay payments, payment reconciliation, and automated transactional emails.",
+      "Expanded Berrydesk into real-time voice support and improved conversation responsiveness, benchmarking AI providers to inform vendor selection.",
+      "Helped turn AI research into Berrydesk product capabilities, enabling autonomous agent workflows and access to business tools through six OAuth integrations.",
+    ],
+    mobilePoints: [
+      "Enabled Parkabox purchases and subscriptions, streamlining payments, reconciliation, and customer notifications.",
+      "Expanded Berrydesk into responsive, real-time voice support and evaluated AI providers to guide vendor selection.",
+      "Turned AI research into autonomous workflows and connected agents to business tools through six OAuth integrations.",
     ],
     stack: "React / Next.js / NestJS / PostgreSQL / Prisma / Pipecat",
   },
@@ -20,8 +26,9 @@ const roles = [
     dates: "Feb 2025 - Jun 2025",
     location: "Kochi, Kerala",
     points: [
-      "Built custom SharePoint web parts using React and the SharePoint Framework, progressing from hands-on training to client projects.",
-      "Developed responsive UI components, integrated SharePoint data sources, and worked on performance and scalability.",
+      "Turned client business requirements into workflow-specific internal applications using custom React and SharePoint web parts.",
+      "Improved usability and access to enterprise data through responsive interfaces connected to SharePoint lists and document libraries.",
+      "Contributed to scalable, maintainable client solutions with reusable React components and structured SharePoint integrations.",
     ],
     stack: "React / SharePoint / SPFx",
   },
@@ -43,7 +50,8 @@ function Experience() {
             <div className="experience-details">
               <h3>{job.company}</h3>
               <p className="role-title">{job.role}</p>
-              <ul>{job.points.map((point) => <li key={point}>{point}</li>)}</ul>
+              <ul className={job.mobilePoints ? "experience-points-desktop" : undefined}>{job.points.map((point) => <li key={point}>{point}</li>)}</ul>
+              {job.mobilePoints && <ul className="experience-points-mobile">{job.mobilePoints.map((point) => <li key={point}>{point}</li>)}</ul>}
               <p className="stack-line">{job.stack}</p>
             </div>
           </article>
