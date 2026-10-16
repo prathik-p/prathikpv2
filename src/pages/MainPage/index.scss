@@ -117,8 +117,6 @@
 .primary-link { background: var(--text); color: var(--bg); padding: 14px 20px; border-radius: 6px; }
 .primary-link:hover { background: var(--muted); color: var(--bg); }
 .secondary-link { border-bottom: 1px solid var(--line); }
-.about-link { padding-bottom: 10px; border-bottom: 1px solid var(--text); font-size: 15px; font-weight: 600; }
-.about-link span { margin-left: 32px; }
 .text-button { border: 0; padding: 8px 0; color: var(--muted); background: none; cursor: pointer; }
 .text-button:hover { color: var(--text); }
 .text-button:disabled { cursor: default; }
@@ -132,8 +130,6 @@
   .marquee-stage { min-height: 230px; padding-block: 54px; }
   .marquee-bands { transform: rotate(-16deg); }
   .hero-bottom { padding-bottom: 28px; align-items: stretch; flex-direction: column; gap: 22px; }
-  .about-link { font-size: 14px; }
-  .about-link span { margin-left: 10px; }
   .hero-actions { display: grid; justify-items: start; gap: 10px; }
   .hero-cta-group { gap: 20px; }
   .motion-toggle { font-size: 13px; }

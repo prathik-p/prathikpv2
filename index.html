@@ -4,17 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0a0a0a" />
+    <link rel="preload" href="/fonts/PlusJakartaSans-Variable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/DrukWide-Super.woff2" as="font" type="font/woff2" crossorigin />
     <script>
-      try {
-        const savedTheme = localStorage.getItem('portfolio-theme');
-        document.documentElement.dataset.theme = savedTheme === 'light' || savedTheme === 'dark'
-          ? savedTheme : matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-      } catch {
-        document.documentElement.dataset.theme = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      {
+        const root = document.documentElement;
+        try {
+          const savedTheme = localStorage.getItem('portfolio-theme');
+          root.dataset.theme = savedTheme === 'light' || savedTheme === 'dark'
+            ? savedTheme : matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        } catch {
+          root.dataset.theme = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+        if (root.dataset.theme === 'light') document.querySelector('meta[name="theme-color"]').content = '#f5f4f0';
+        // Only the welcome intro uses Designer; skip it when HomePage will skip the intro.
+        let welcomed = false;
+        try { welcomed = sessionStorage.getItem('portfolio-welcomed') === 'true'; } catch { /* Storage may be unavailable. */ }
+        if (!welcomed && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          document.head.insertAdjacentHTML('beforeend', '<link rel="preload" href="/fonts/Designer.woff2" as="font" type="font/woff2" crossorigin>');
+        }
       }
     </script>
-    <meta name="description" content="Prathik Prejith, full stack developer. Thoughtful interfaces and solid foundations, from the first pixel to the last endpoint." />
     <title>Prathik Prejith</title>
+    <meta name="description" content="Prathik Prejith, full stack AI engineer. Thoughtful interfaces and solid foundations, from the first pixel to the last endpoint." />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="canonical" href="https://prathikpv2.vercel.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://prathikpv2.vercel.app/" />
+    <meta property="og:title" content="Prathik Prejith, Full Stack AI Engineer" />
+    <meta property="og:description" content="Thoughtful interfaces and solid foundations, from the first pixel to the last endpoint." />
+    <meta property="og:image" content="https://prathikpv2.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Prathik Prejith, full stack AI engineer" />
+    <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body>
     <div id="root"></div>

@@ -1,5 +1,3 @@
-.content-section { padding: clamp(72px, 9vw, 128px) var(--gutter); border-top: 1px solid var(--line); }
-.content-section > h2 { margin: 0 0 64px; font-size: clamp(2.5rem, 5vw, 5rem); line-height: 1.1; font-weight: 500; letter-spacing: -.06em; }
 .experience-list { max-width: 1200px; margin-left: auto; }
 .experience-entry { display: grid; grid-template-columns: 1fr 3fr; gap: 40px; }
 .experience-entry + .experience-entry { margin-top: 60px; padding-top: 60px; border-top: 1px solid var(--line); }
@@ -16,7 +14,6 @@
 @media (max-width: 767px) {
   .experience-details ul.experience-points-desktop { display: none; }
   .experience-details ul.experience-points-mobile { display: grid; }
-  .content-section > h2 { margin-bottom: 40px; }
   .experience-entry { grid-template-columns: 1fr; gap: 20px; }
   .experience-entry + .experience-entry { margin-top: 40px; padding-top: 40px; }
   .experience-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; }

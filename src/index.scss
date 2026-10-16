@@ -1,16 +1,18 @@
+// Latin WOFF2 subsets live in public/fonts so index.html can preload them by a stable URL.
 @font-face {
   font-family: DrukWide;
-  src: url(./fonts/DrukWide-Super-Web.otf) format("opentype");
+  src: url(/fonts/DrukWide-Super.woff2) format("woff2");
   font-display: swap;
 }
 @font-face {
   font-family: Designer;
-  src: url(./fonts/Designer.otf) format("opentype");
-  font-display: swap;
+  src: url(/fonts/Designer.woff2) format("woff2");
+  // The intro is brief; waiting beats swapping fonts mid-animation.
+  font-display: block;
 }
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url(./fonts/PlusJakartaSans-Variable.ttf) format("truetype");
+  src: url(/fonts/PlusJakartaSans-Variable.woff2) format("woff2");
   font-weight: 200 800;
   font-display: swap;
 }
@@ -39,16 +41,13 @@
   --hover: #eae9e3;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
 body { margin: 0; min-width: 280px; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; }
 a, button { -webkit-tap-highlight-color: transparent; }
 a:hover { color: var(--text); }
-section[id] { scroll-margin-top: 110px; }
 :focus-visible { outline: 2px solid var(--text); outline-offset: 6px; }
 ::selection { background: var(--text); color: var(--bg); }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 .skip-link { position: fixed; left: 20px; top: 20px; z-index: 110; padding: 12px 18px; background: var(--text); color: var(--bg); transform: translateY(-180%); }
 .skip-link:focus { transform: translateY(0); color: var(--bg); }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

@@ -71,7 +71,6 @@ html, body, #root, .portfolio { height: 100%; overflow: hidden; }
 .panel-selector input:checked + span { color: var(--bg); background: var(--text); border-color: var(--text); }
 .panel-selector input:focus-visible + span { outline: 2px solid var(--text); outline-offset: 4px; }
 .panel-selector label:hover span { border-color: var(--muted); }
-[hidden] { display: none !important; }
 .project-list, .experience-list { display: block; width: 100%; max-width: 840px; margin: 0 auto; }
 .project-entry, .project-entry + .project-entry { margin: 0; padding: 0; border: 0; }
 // Both panels reserve the tallest panel's height, keeping the heading and tabs fixed.

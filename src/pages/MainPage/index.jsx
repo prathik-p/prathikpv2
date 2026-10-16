@@ -70,7 +70,7 @@ function HomePage() {
           <section ref={homeRef} tabIndex={-1} className="hero" id="home" aria-labelledby="hero-title">
             <div className={`hero-introduction${paused || intro || !heroVisible ? " is-paused" : ""}`}>
               <h1 id="hero-title">
-                Full stack engineer building<br className="desktop-break" /> web products and voice AI.
+                Full stack AI engineer building<br className="desktop-break" /> web products and voice AI.
               </h1>
             </div>
             <div className={`marquee-stage${paused || intro || !heroVisible ? " is-paused" : ""}`} aria-hidden="true">
